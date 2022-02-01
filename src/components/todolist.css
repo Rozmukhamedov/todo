@@ -1,0 +1,21 @@
+.todolist {
+  margin: 0 auto;
+  width: 20%;
+}
+
+.flex {
+  display: flex;
+  margin: 10px 0;
+}
+
+div {
+  margin-left: 5px;
+}
+
+button {
+  margin-left: 5px;
+}
+
+.false {
+  color: red;
+}
