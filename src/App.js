@@ -1,27 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getTodo } from './api/todo/todo';
 import './App.css';
 import AddTodo from './components/AddTodoComponent';
 import TodoList from './components/TodoListComponent';
 
 function App() {
+  const [todo, setTodo] = useState([]);
 
-  const [todo, setTodo] = useState([
-    {
-      id: 1,
-      title: 'first todo',
-      status: true
-    },
-    {
-      id: 2,
-      title: 'second todo',
-      status: true
-    },
-    {
-      id: 3,
-      title: 'third todo',
-      status: true
-    },
-  ]);
+  useEffect(() => {
+    getTodo(setTodo)
+  }, []);
+
+  console.log(todo)
   return (
     <>
       <AddTodo todo={todo} setTodo={setTodo} />

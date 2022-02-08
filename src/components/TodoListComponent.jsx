@@ -9,7 +9,7 @@ const TodoList = ({ todo, setTodo }) => {
   function statusTodo(id) {
     const newTodo = [...todo].filter((item) => {
       if (item.id == id) {
-        item.status = !item.status;
+        item.completed = !item.completed;
       }
       return item;
     });
@@ -22,7 +22,7 @@ const TodoList = ({ todo, setTodo }) => {
       {todo.map((item, id) => (
         <div key={id} className="flex">
           <div>{item.id}.</div>
-          <div className={item.status ? `true` : `false`}>{item.title}</div>
+          <div className={item.completed ? `false` : `true`}>{item.title}</div>
           <button onClick={() => statusTodo(item.id)}>Status</button>
           <button onClick={() => deleteTodo(item.id)}>delete</button>
         </div>
