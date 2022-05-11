@@ -1,11 +1,8 @@
-import customFetch from "../../hooks/useCustomFetcher";
+import fetchAsync from "../../hooks/customFetch";
 
-export const getTodo = (data) => {
-    return customFetch(
-        (response) => {
-            data(response);
-        },
-        `https://jsonplaceholder.typicode.com/todos`,
-        {}
-    )
+export const getTodoList = () => {
+    const data = fetchAsync(`https://jsonplaceholder.typicode.com/todos`)
+    console.log(data)
+    return data;
 }
+

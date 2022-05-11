@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { getTodo } from './api/todo/todo';
+import { getTodo } from './service/todo';
 import './App.css';
 import AddTodo from './components/AddTodoComponent';
 import TodoList from './components/TodoListComponent';
 
 function App() {
   const [todo, setTodo] = useState([]);
-
   useEffect(() => {
-    getTodo(setTodo)
-  }, []);
+    getTodo()
+  }, [])
 
-  console.log(todo)
+
+
   return (
     <>
       <AddTodo todo={todo} setTodo={setTodo} />
